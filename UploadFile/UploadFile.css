@@ -1,0 +1,33 @@
+.THIS .progressBackground {
+  width: 20rem;
+  background-color: #9FAAB5;
+  position: absolute;
+  bottom: 0px;
+  z-index: 2;
+}
+.THIS .progressBar {
+  width: 0%;
+  height: 3px;
+  background-color: #1589EE;
+}
+
+.THIS .inputFile {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.THIS .fileDisplay {
+  white-space: nowrap;
+  width: 20rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.THIS .pointer {
+  cursor: pointer;
+  margin-left: 5px;
+}

@@ -1,0 +1,30 @@
+<aura:component controller="UploadFileController">
+  <aura:attribute name="parentId" type="Id"/>
+  <aura:attribute name="label" type="String" default="Subir archivo"/>
+  <aura:attribute name="fileName" type="String" />
+  <div class="slds-container--small slds-is-relative">
+
+    <div aura:id="spinner" class="slds-spinner_container slds-hide">
+      <div class="progressBackground">
+        <div aura:id="progressBar" class="progressBar"></div>
+      </div>
+    </div>
+
+    <span class="slds-form-element__label">{!v.label}</span>
+    <div class="slds-form-element__control">
+      <div class="slds-file-selector slds-file-selector--files">
+        <div class="slds-file-selector__dropzone fileDisplay">
+          <ui:button label="Cargar" press="{!c.save}" disabled="true" aura:id="butt"/>
+          <span onclick="{!c.removeSelectedFile}" class="pointer">
+            <lightning:icon iconName="utility:close" size="small" alternativeText="Remove" />
+          </span>
+          <span onclick="{!c.openDialog}" class="pointer">
+            <input type="file" aura:id="file" class="inputFile" onchange="{!c.enableButt}"/>
+            <lightning:icon iconName="standard:folder" size="small" alternativeText="Upload" />
+            <label>{!v.fileName}</label>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</aura:component>
